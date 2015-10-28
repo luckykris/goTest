@@ -6,6 +6,7 @@ import (
 
 func main(){
 	HostnameTest()
+	PathSeparatorTest()
 }
 
 func HostnameTest(){
@@ -14,4 +15,7 @@ func HostnameTest(){
 		panic(err.Error())
 	}
 	fmt.Println(name)
+}
+func PathSeparatorTest(){
+	fmt.Println(string(os.PathSeparator))  //os.PathSeparator is ascii 
 }
