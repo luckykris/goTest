@@ -7,7 +7,8 @@ import (
 func main(){
 	//HostnameTest()
 	//PathSeparatorTest()
-	OpenTest()
+	//OpenTest()
+	MkdirAllTest()
 }
 
 func HostnameTest(){
@@ -35,4 +36,10 @@ func OpenTest(){
 	fmt.Println(fi.Mode()) // return type uint32
 	fmt.Println(fi.ModTime()) // return time.Time
 	fmt.Println(fi.Sys())
+}
+func MkdirAllTest(){
+	err:=os.MkdirAll("/tmp/a/b/", 0755) // same as shell "mkdir -p /tmp/a/b"
+	if err!=nil{
+		panic("Error")
+	}
 }
