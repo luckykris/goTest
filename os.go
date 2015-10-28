@@ -21,11 +21,11 @@ func PathSeparatorTest(){
 	fmt.Println(string(os.PathSeparator))  //os.PathSeparator is ascii 
 }
 func OpenTest(){
-	fd, err := os.Open("/tmp/opentest.txt") //open a exist file
+	fd, err := os.Open("/tmp") //return *File open a exist file or directory
 	if err != nil {
 		fmt.Printf("Error opening  file: %s", err.Error())
 	}
-	fi,err:=fd.Stat()
+	fi,err:=fd.Stat() //return *FileInfo
 	if err != nil {
 		fmt.Printf("Error fetch file info: %s", err.Error())
 	}
