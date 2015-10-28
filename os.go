@@ -5,8 +5,9 @@ import (
 )
 
 func main(){
-	HostnameTest()
-	PathSeparatorTest()
+	//HostnameTest()
+	//PathSeparatorTest()
+	OpenTest()
 }
 
 func HostnameTest(){
@@ -18,4 +19,20 @@ func HostnameTest(){
 }
 func PathSeparatorTest(){
 	fmt.Println(string(os.PathSeparator))  //os.PathSeparator is ascii 
+}
+func OpenTest(){
+	fd, err := os.Open("/tmp/opentest.txt") //open a exist file
+	if err != nil {
+		fmt.Printf("Error opening  file: %s", err.Error())
+	}
+	fi,err:=fd.Stat()
+	if err != nil {
+		fmt.Printf("Error fetch file info: %s", err.Error())
+	}
+	fmt.Println(fi.IsDir())
+	fmt.Println(fi.Name())
+	fmt.Println(fi.Size())
+	fmt.Println(fi.Mode()) // return type uint32
+	fmt.Println(fi.ModTime()) // return time.Time
+	fmt.Println(fi.Sys())
 }
