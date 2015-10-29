@@ -5,10 +5,10 @@ import (
 )
 
 func main(){
-	poolTest()
+	pool()
 }
 
-func poolTest(){
+func pool(){
 	pool:=new(sync.Pool)
 	pool.New=func()interface{}{
 		return "None" //when you use Get() and there is no item in pool,it will be call and return the result as the return of Get().

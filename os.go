@@ -5,23 +5,23 @@ import (
 )
 
 func main(){
-	//HostnameTest()
-	//PathSeparatorTest()
-	//OpenTest()
-	MkdirAllTest()
+	Hostname()
+	PathSeparator()
+	Open()
+	MkdirAll()
 }
 
-func HostnameTest(){
+func Hostname(){
 	name,err:=os.Hostname()
 	if err!=nil{
 		panic(err.Error())
 	}
 	fmt.Println(name)
 }
-func PathSeparatorTest(){
+func PathSeparator(){
 	fmt.Println(string(os.PathSeparator))  //os.PathSeparator is ascii 
 }
-func OpenTest(){
+func Open(){
 	fd, err := os.Open("/tmp") //return *File open a exist file or directory
 	if err != nil {
 		fmt.Printf("Error opening  file: %s", err.Error())
@@ -37,7 +37,7 @@ func OpenTest(){
 	fmt.Println(fi.ModTime()) // return time.Time
 	fmt.Println(fi.Sys())
 }
-func MkdirAllTest(){
+func MkdirAll(){
 	err:=os.MkdirAll("/tmp/a/b/", 0755) // same as shell "mkdir -p /tmp/a/b"
 	if err!=nil{
 		panic("Error")

@@ -5,15 +5,15 @@ import (
 )
 
 func main(){
-	StringTest()
-	ParseDurationTest()
+	String()
+	ParseDuration()
 }
 
-func StringTest(){
+func String(){
 	a:=187*time.Second
 	fmt.Println(a.String())
 }
-func ParseDurationTest(){
+func ParseDuration(){
 	duration,err:=time.ParseDuration("5h34m2s1ms1us1ns")
 	if err!=nil{
 		panic(err.Error())
