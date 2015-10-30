@@ -2,13 +2,16 @@ package main
 import (
 	"os"
 	"fmt"
+	"syscall"
 )
 
 func main(){
-	Hostname()
-	PathSeparator()
-	Open()
-	MkdirAll()
+	//Hostname()
+	//PathSeparator()
+	//Open()
+	//MkdirAll()
+	//FindProcess()
+	Create()
 }
 
 func Hostname(){
@@ -43,3 +46,20 @@ func MkdirAll(){
 		panic("Error")
 	}
 }
+func FindProcess(){
+	process,err:=os.FindProcess(1) //return  Process ,but do nothing.
+	if err!=nil{
+		panic("Error")
+	}
+	if err= process.Signal(syscall.Signal(0));err !=nil{ // syscall 0 is like 'ping' to the process,just check if process is exist
+		panic("did not exist")
+	}
+	fmt.Println("process exist")
+}
+func Create(){
+	_,err:=os.Create("/tmp/testCreat.txt") //return *File,error ,create a file with 644 permission
+	if err!=nil{
+		panic("error")
+	}
+}
+

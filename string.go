@@ -8,6 +8,7 @@ func main(){
 	HasPrefix()
 	HasSuffix()
 	TrimSpace()
+	Index()
 }
 
 func HasPrefix(){
@@ -18,4 +19,7 @@ func HasSuffix(){
 }
 func TrimSpace(){
 	fmt.Println(strings.TrimSpace("   AAA    ")) // remove all leading or tailing white space  
+}
+func Index(){
+	fmt.Println(strings.Index("abcdc","c"))
 }

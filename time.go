@@ -5,8 +5,11 @@ import (
 )
 
 func main(){
-	String()
-	ParseDuration()
+	//String()
+	//ParseDuration()
+	//Tick()
+	//NewTicker()
+	Now()
 }
 
 func String(){
@@ -19,4 +22,34 @@ func ParseDuration(){
 		panic(err.Error())
 	}
 	fmt.Println(duration.String())
+}
+func Tick(){
+	intger:=1
+	b:=make(chan int)
+	t:=time.Duration(time.Duration(intger)) * time.Second
+	ticker:=time.Tick(t)
+	select{
+		case<-ticker:
+			fmt.Println("tick")
+		case<-b:
+			fmt.Println("tok")
+	}
+}
+func NewTicker(){
+	ticker := time.NewTicker(time.Duration(5) * time.Second)
+	ticker2 := time.NewTicker(time.Duration(8) * time.Second)
+	go func(){ time.Sleep(time.Duration(2) * time.Second)
+		   ticker.Stop()
+		}()
+	select{
+		case<-ticker.C:
+			fmt.Println("tick")
+		case<-ticker2.C:
+			fmt.Println("tick2")
+	}
+}
+func Now(){
+	t:=time.Now()
+	fmt.Println(t.Format("2006-01-02T15:04:05Z07:00"))
+	fmt.Println(t.Add(time.Duration(2) * time.Minute).Format("2006-01-02T15:04:05Z07:00"))
 }
