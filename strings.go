@@ -5,10 +5,11 @@ import (
 )
 
 func main(){
-	HasPrefix()
-	HasSuffix()
-	TrimSpace()
-	Index()
+//	HasPrefix()
+//	HasSuffix()
+//	TrimSpace()
+//	Index()
+	ToLower()
 }
 
 func HasPrefix(){
@@ -22,4 +23,8 @@ func TrimSpace(){
 }
 func Index(){
 	fmt.Println(strings.Index("abcdc","c"))
+}
+func ToLower(){
+	s:=strings.ToLower("ABC")
+	fmt.Println(s)
 }

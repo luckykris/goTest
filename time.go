@@ -50,6 +50,13 @@ func NewTicker(){
 }
 func Now(){
 	t:=time.Now()
+	t2:=time.Now().Add(time.Duration(2) * time.Minute)
 	fmt.Println(t.Format("2006-01-02T15:04:05Z07:00"))
 	fmt.Println(t.Add(time.Duration(2) * time.Minute).Format("2006-01-02T15:04:05Z07:00"))
+	if t.Before(t2){
+		fmt.Println(true)
+	}
+	if !t.After(t2){
+		fmt.Println(true)
+	}
 }
