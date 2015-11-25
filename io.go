@@ -16,7 +16,7 @@ func ReadDir(){
 	}
 }
 func ReadFile(){
-	content,err:=ioutil.ReadFile("/etc/passwd") //return []byte
+	content,err:=ioutil.ReadFile("/root/test.txt") //return []byte
 	if err!=nil{
 		panic("read failed")
 	}

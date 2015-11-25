@@ -5,7 +5,8 @@ import (
 )
 
 func main(){
-	pool()
+	//pool()
+	once()
 }
 
 func pool(){
@@ -20,4 +21,14 @@ func pool(){
 		a:=pool.Get()
  		fmt.Println(a)
 	}
+}
+
+func t(){
+	fmt.Println(1)
+}
+func once(){
+	o:=new(sync.Once) //only do the function once
+	o.Do(t)
+	o.Do(t)
+	o.Do(t)
 }
