@@ -11,6 +11,7 @@ const (
 var nil interface{}
 
 func main(){
+	//done all
 	//append 追加slice的元素到slice尾部,向slice1种追加元素2,3
 	slice1:=[]int{1}
 	slice:=append(slice1,2,3)

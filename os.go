@@ -6,12 +6,20 @@ import (
 )
 
 func main(){
+	//Lstat 获取FileInfo 接口 ，文件基本信息,如果是链接，则返回链接信息
+	fi,_:=os.Lstat("/etc/passwd")
+	fmt.Println(fi)
+	
+	//Stat 获取FileInfo 接口 ，文件基本信息.
+	fi,_=os.Stat("/etc/passwd")
+	fmt.Println(fi)
+
 	//Hostname()
 	//PathSeparator()
 	//Open()
 	//MkdirAll()
 	//FindProcess()
-	Create()
+	//Create()
 }
 
 func Hostname(){
